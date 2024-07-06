@@ -1,18 +1,3 @@
-const lazyImages = document.querySelectorAll('img[loading="lazy"]'); // Получаем все изображения с атрибутом loading="lazy"
-function addLoadedClass(image) { // Функция для добавления класса к родителю изображения после его загрузки
-   const parentElement = image.parentElement;
-   if (image.complete) { // Проверяем, загружено ли изображение
-      parentElement.classList.add('loaded');
-   } else {
-      image.addEventListener('load', function() { // Добавляем событие load, чтобы добавить класс после загрузки изображения
-         parentElement.classList.add('loaded');
-      });
-   }
-}
-lazyImages.forEach(addLoadedClass); // Перебираем все изображения и вызываем функцию addLoadedClass для каждого
-
-/* === */
-
 const museumHallsSlider = document.querySelector('.museum-halls__slider')
 if (museumHallsSlider) {
    new Swiper(museumHallsSlider, {
