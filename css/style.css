@@ -814,6 +814,11 @@ body p strong {
   margin-top: 15px;
 }
 
+.page__head.events-and-video-head .page__headBlockImage {
+  height: 279px;
+  margin-top: 0;
+}
+
 .page__head.two {
   padding-bottom: 5px;
   padding-top: 43px;
@@ -911,12 +916,18 @@ body p strong {
 .page__content img {
   margin-bottom: 68px;
   margin-top: 35px;
+  width: 100%;
 }
 
 .page__content .blockText {
   margin-left: auto;
   margin-right: auto;
   max-width: 940px;
+}
+
+.page__content .blockText img {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .page__content .blockText p {
@@ -3615,6 +3626,116 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   line-height: normal;
 }
 
+/* Page - Events */
+
+.events-and-video {
+  padding-bottom: 72px;
+}
+
+.events-and-video__items {
+  margin-top: 30px;
+}
+
+.events-and-video__item:nth-child(1) h2 {
+  border-bottom: 1px solid #c7c7c7;
+  padding-bottom: 14px;
+}
+
+.events-and-video__item:nth-child(2) h2 {
+  margin-left: 18px;
+}
+
+.events-and-video__item h2 {
+  color: rgb(133, 133, 126);
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin: 0 0 14px;
+}
+
+.events-and-video .events__previews {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10.5px;
+  margin-right: -10.5px;
+}
+
+.events-and-video .events__preview {
+  margin: 0 10.5px 39px;
+  width: calc(50% - 21px);
+}
+
+.events-and-video .events__previewBlockImage {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 74%;
+  position: relative;
+}
+
+.events-and-video .events__previewBlockImage img {
+  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s, transform 0.6s;
+  width: 100%;
+}
+
+.events-and-video .events__preview .event-date {
+  color: rgb(133, 133, 126);
+  font-size: 14px;
+  margin: 9px 0 0;
+  transition: margin-left 0.6s;
+}
+
+.events-and-video .events__preview h3 {
+  font-family: "Georgia", serif;
+  font-size: 17px;
+  line-height: normal;
+  margin: 9px 0 0;
+  text-transform: none;
+}
+
+.events-and-video__itemWrapVideos {
+  background-color: #f5f5f5;
+  padding: 20px 20px 15px;
+}
+
+.events-and-video__itemWrapVideo {
+  margin-bottom: 13px;
+}
+
+.events-and-video__itemWrapVideo .wrap-iframe {
+  display: block;
+  margin-bottom: 17px;
+  padding-bottom: 56%;
+  position: relative;
+}
+
+.events-and-video__itemWrapVideo .wrap-iframe iframe {
+  border: none;
+  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.events-and-video__itemWrapVideo p {
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 340px;
+  text-align: center;
+}
+
 /* Page - Research single */
 
 .research-single__head {
@@ -3958,6 +4079,21 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   }
 }
 
+@media screen and (min-width: 801px) {
+  .events-and-video__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .events-and-video__item {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(50% - 30px);
+  }
+}
+
 @media screen and (min-width: 861px) {
   .research__block {
     align-items: flex-start;
@@ -4155,12 +4291,12 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
     left: calc(50% - 100px);
     min-width: 13.5rem;
     position: absolute;
-    left: -28px;
+    left: -33px;
     top: 80%;
     z-index: 10;
     margin: 0;
     padding: 8px 8px 18px;
-    min-width: 170px;
+    min-width: 180px;
     opacity: 0;
     visibility: hidden;
     transform-origin: 50% -50px;
@@ -4168,6 +4304,8 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
     transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s;
     box-shadow: 0 20px 32px -8px rgba(17, 16, 19, 0.15), 0 0 1px rgba(17, 16, 19, 0.05);
     transition-property: transform, opacity, visibility;
+    overflow-x: auto;
+    max-height: 350px;
     /*
     &::before {
        background-color: rgba(255, 255, 255, 0.32);
@@ -4220,6 +4358,20 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   .header .menu__list li:hover .menu__arrow {
     color: inherit;
     transform: scale(1, -1);
+  }
+}
+
+@media screen and (min-width: 1100px) and (min-width: 992px) {
+  .header .menu__sub-list::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .header .menu__sub-list::-webkit-scrollbar-track {
+    background-color: #e6e6e6;
+  }
+
+  .header .menu__sub-list::-webkit-scrollbar-thumb {
+    background-color: #acacac;
   }
 }
 
@@ -4902,6 +5054,27 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   .page__content img {
     margin-bottom: 33px;
   }
+
+  .events-and-video__item:nth-child(2) {
+    padding-top: 50px;
+  }
+
+  .events-and-video .events__preview {
+    width: calc(33.3333% - 21px);
+  }
+
+  .events-and-video__itemWrapVideos {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10.5px;
+    padding-right: 10.5px;
+  }
+
+  .events-and-video__itemWrapVideo {
+    margin-left: 10.5px;
+    margin-right: 10.5px;
+    width: calc(50% - 21px);
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -5043,6 +5216,24 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   }
 }
 
+@media screen and (max-width: 600.98px) {
+  .events-and-video .events__preview {
+    margin-bottom: 25px;
+    width: calc(50% - 21px);
+  }
+
+  .events-and-video__itemWrapVideos {
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .events-and-video__itemWrapVideo {
+    margin: 0 0 25px;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 575.98px) {
   body {
     font-size: 14px;
@@ -5050,6 +5241,10 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   }
 
   .page__head.research .page__headBlockImage {
+    height: 200px;
+  }
+
+  .page__head.events-and-video-head .page__headBlockImage {
     height: 200px;
   }
 
@@ -5109,6 +5304,11 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   .page__content img {
     margin-bottom: 20px;
     margin-top: 20px;
+  }
+
+  .page__content .blockText img {
+    margin-bottom: 20px;
+    margin-top: 0;
   }
 
   .page__content .blockText p {
@@ -5547,6 +5747,50 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
     width: calc(100% - 60px);
   }
 
+  .events-and-video {
+    padding-bottom: 30px;
+  }
+
+  .events-and-video__item:nth-child(1) h2 {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .events-and-video__item:nth-child(2) {
+    padding-top: 35px;
+  }
+
+  .events-and-video__item:nth-child(2) h2 {
+    margin-left: 0;
+  }
+
+  .events-and-video__item h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .events-and-video .events__preview .event-date {
+    font-size: 13px;
+  }
+
+  .events-and-video .events__preview h3 {
+    font-size: 16px;
+  }
+
+  .events-and-video__itemWrapVideos {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px 15px 0;
+  }
+
+  .events-and-video__itemWrapVideo .wrap-iframe {
+    margin-bottom: 8px;
+  }
+
+  .events-and-video__itemWrapVideo p {
+    font-size: 16px;
+  }
+
   .research-single__head {
     margin-top: 0;
     padding-bottom: 12px;
@@ -5624,6 +5868,19 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
   }
 }
 
+@media screen and (max-width: 460.98px) {
+  .events-and-video .events__previews {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .events-and-video .events__preview {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1100px) and (max-width: 1440.98px) {
   .header .menu {
     transform: translateX(-60px);
@@ -5694,5 +5951,13 @@ main.museum-halls .museum-halls__block ul li p:nth-child(2) {
 
   .about-expedition__sliderBlockImage:hover::after {
     opacity: 1;
+  }
+
+  .events-and-video .events__preview:hover .events__previewBlockImage img {
+    transform: scale(0.9);
+  }
+
+  .events-and-video .events__preview:hover .event-date {
+    margin-left: 20px;
   }
 }
